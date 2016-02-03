@@ -32,14 +32,14 @@ function song(data) {
   var spotify_uri = data.song;
   var position = data.position;
 
-  console.log(spotify_uri)
-
   if (currentSong == null) {
+    currentSong = spotify_uri
     playSong(spotify_uri, position)
   }
 }
 
 function playSong(uri, pos) {
+  console.log('Playing Song '+ uri)
   spotify.playTrack(uri, function() {
     spotify.jumpTo(pos)
   })
