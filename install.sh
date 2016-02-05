@@ -13,8 +13,8 @@ else
   mkdir ~/local
   mkdir ~/node-latest-install
   cd ~/node-latest-install
-  curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
-  ./configure --prefix=~/local
-  make install # ok, fine, this step probably takes more than 30 seconds...
-  curl https://www.npmjs.org/install.sh | sh
+  curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 >/dev/null
+  ./configure --prefix=~/local >/dev/null
+  make install >/dev/null
+  curl https://www.npmjs.org/install.sh | sh >/dev/null
 fi
