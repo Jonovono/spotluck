@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fanoutpub": "^1.0.3",
     "pubnub": "^3.7.23",
     "pusher": "^1.1.0",
     "pusher-client": "^1.0.0",

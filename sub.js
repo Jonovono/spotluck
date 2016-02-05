@@ -1,23 +1,53 @@
 var spotify = require("spotify-node-applescript");
 var winston = require("winston");
-var Pusher = require("pusher-client")
-var pusher = new Pusher('2551e0edf68a000a0f5a', {secret: '9cbc9df1f384ff20eb24'})
+var client = require('./client').createClient();
 
-var channel = null;
+var player = require('./player')
+
 var currentSong = null;
+
+var new_user = true;
 
 function start(channel_id) {
     spotifyRunning()
     winston.log("info", "You are connected to " + channel_id);
 
-    channel = pusher.subscribe('private-' + channel_id);
+    client.on("message", message)
 
-    channel.bind('client-song', song);
-    channel.bind('client-new-song', newSong);
+    vent = {}
+    vent.event_type = 'joined'
 
-    // channel.trigger('client-joined', {'test':'test'});
+    client.publish(channel_id, JSON.stringify(vent));
+
+    client.subscribe(channel_id)
+
+    player.playerStatus()
 }
 
+function message(channel, message) {
+  var message = JSON.parse(message.toString())
+
+  var event_type = message.event_type;
+
+  if (event_type === 'info') {
+    if (new_user) {
+      console.log('Starting playing for new User')
+      new_user = false;
+
+      var message = message.message;
+      var track = message.track;
+      var position = message.position;
+
+      player.playSong(track, position);
+    }
+  } else if (event_type === 'new-song') {
+      newSong(message.message)
+  } else if (event_type === 'new-state') {
+    player.changeState(message.message);
+  }
+  // var ev = message.event;
+  // var m = message.message;
+}
 
 function newSong(data) {
   var spotify_uri = data.song;

@@ -1,7 +1,8 @@
 var pub = require("./pub")
 var sub = require("./sub")
+var player = require('./player');
 
-// console.log(pub.test())
+player.spotifyRunning()
 
 var args = process.argv.slice(2)
 
