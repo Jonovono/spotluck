@@ -11,11 +11,11 @@ var args = process.argv.slice(2)
 var command = args[0]
 var channel_id = args[1]
 
-if (command !== 'start' ) {
+if (command !== 'start' || command !== 'play') {
   console.log('Enter a command')
 }
 
-if (command === 'start' && channel_id) {
+if (command === 'play') {
   sub.start(channel_id)
 } else if (command === 'start') {
     pub.start()
