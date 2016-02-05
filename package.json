@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "fanoutpub": "^1.0.3",
+    "mqtt": "^1.7.0",
     "pubnub": "^3.7.23",
     "pusher": "^1.1.0",
     "pusher-client": "^1.0.0",
