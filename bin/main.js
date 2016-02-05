@@ -1,6 +1,6 @@
-var pub = require("./lib/pub")
-var sub = require("./lib/sub")
-var player = require('./lib/player');
+var pub = require("../lib/pub")
+var sub = require("../lib/sub")
+var player = require('../lib/player');
 
 player.spotifyRunning()
 
