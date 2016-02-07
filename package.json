@@ -23,10 +23,12 @@
   "author": "Jordan Howlett <jordan@howlett.io>",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^1.1.1",
     "faye": "^1.1.2",
     "randomstring": "^1.1.3",
     "redis": "^2.4.2",
     "spotify-node-applescript": "^0.2.2",
+    "terminal-ui": "^1.0.3",
     "winston": "^2.1.1",
     "yargs": "^3.32.0"
   }
