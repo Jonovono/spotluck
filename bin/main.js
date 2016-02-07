@@ -5,7 +5,7 @@ var CLI = require('../lib/cli');
 
 spotify.isRunning(function(err, isRunning) {
   if (!isRunning) {
-    winston.error('Please start Spotify')
+    console.log('Please start Spotify')
     process.exit()
   }
 
