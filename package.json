@@ -1,7 +1,7 @@
 {
   "name": "spotluck",
   "url": "https://github.com/jonovono/spotluck",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Listen to music together, with anyone, anywhere, in real time, on Spotify",
   "bin": {
     "spotluck": "bin/main.js"
@@ -24,6 +24,7 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^1.1.1",
+    "death": "^1.0.0",
     "faye": "^1.1.2",
     "redis": "^2.4.2",
     "sentencer": "^0.1.5",
