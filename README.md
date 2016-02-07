@@ -1,6 +1,10 @@
 # SPOTLUCK
 Listen to Spotify together, with anyone, anywhere in the world, in real time.
 
+# Install
+
+``` npm install spotluck -g ```
+
 ## Usage
 
 ### Start a channel
