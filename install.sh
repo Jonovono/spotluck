@@ -6,8 +6,12 @@ exists()
 if exists node; then
   echo "Node exists"
 else
-  echo "Installing Brew"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null
+  if exists brew; then
+    echo "Brew Exists"
+  else
+    echo "Installing Brew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" >/dev/null
+  fi
 
   echo "Installing Node"
   brew install node >/dev/null
