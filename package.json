@@ -1,9 +1,8 @@
 {
   "name": "spotluck",
   "url": "https://github.com/jonovono/spotluck",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Listen to music together, with anyone, anywhere, in real time, on Spotify",
-  "readme": "README.md",
   "bin": {
     "spotluck": "bin/main.js"
   },
